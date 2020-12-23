@@ -22,7 +22,7 @@ client = commands.Bot(command_prefix="$")
 
 @client.command(name="b")
 async def b(ctx):
-    await ctx.channel.send("read a book lil nigga")
+    await ctx.channel.send("please read a book")
 
 @client.command(name="c")
 async def c(ctx):
