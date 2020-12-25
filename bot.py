@@ -24,15 +24,25 @@ def printout_book(books_dict):
     book=books_dict['fields']
     print(book['Title'])
     print(book['Author'])
-    #print(book["Genre"])
-    #print(book["Description"])
-    #print(book["Content Warnings"])
+    print(book["Genre"])
+    print(book["Content Warnings"])
+    print(book["Description"])
+
 
 client = commands.Bot(command_prefix="$")
 
 @client.command(name="b")
 async def b(ctx):
-    await ctx.channel.send(book_list[0])
+    book=book_list[0]
+    print(book)
+    book_info=book['fields']
+    await ctx.channel.send("Here's my suggestion")
+    await ctx.channel.send("Title: "+book_info['Title'])
+    await ctx.channel.send("Author(s): "+book_info['Author'])
+    await ctx.channel.send("Genre(s): "+book_info['Genre'])
+    await ctx.channel.send("Content Warning(s): "+book_info['Content Warnings'])
+    await ctx.channel.send("Description: "+book_info['Description'])
+
 
 @client.command(name="c")
 async def c(ctx):
