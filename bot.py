@@ -33,7 +33,10 @@ client = commands.Bot(command_prefix="$")
 
 @client.command(name="b")
 async def b(ctx):
-    book=book_list[0]
+    #from random import shuffle
+    #x = [[i] for i in range(10)]
+    #shuffle(x)
+    book=book_list[8]
     print(book)
     book_info=book['fields']
     await ctx.channel.send("Here's my suggestion")
@@ -46,8 +49,14 @@ async def b(ctx):
 
 @client.command(name="c")
 async def c(ctx):
-    await ctx.channel.send("I'm leaving in 2 minutes, good-bye.")
+    await ctx.channel.send("I will appear offline in 2 minutes, good-bye.")
     await client.close()
+
+@client.command(name="h")
+async def c(ctx):
+    await ctx.channel.send("How to use BookClubBot")
+    await ctx.channel.send("Send $b for a book suggestion.")
+    await ctx.channel.send("Send $c to close the bot.")
 
 @client.event
 async def on_ready():
