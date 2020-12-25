@@ -6,6 +6,7 @@ from discord.ext import commands
 from discord.ext.commands import has_role
 from discord import Member
 from discord.utils import get
+#from array import *
 
 load_dotenv()
 TOKEN = os.environ['DISCORD_TOKEN']
@@ -16,13 +17,22 @@ H={"api_key":key}
 url="https://api.airtable.com/v0/appB7YoaWh3su8mAO/BookClubBot?maxRecords=999&view=Grid%20view"
 r=requests.get(url,params=H)
 books_dict=r.json()
-print(books_dict)
+book_list = books_dict["records"]
+
+
+def printout_book(books_dict):
+    book=books_dict['fields']
+    print(book['Title'])
+    print(book['Author'])
+    #print(book["Genre"])
+    #print(book["Description"])
+    #print(book["Content Warnings"])
 
 client = commands.Bot(command_prefix="$")
 
 @client.command(name="b")
 async def b(ctx):
-    await ctx.channel.send("please read a book")
+    await ctx.channel.send(book_list[0])
 
 @client.command(name="c")
 async def c(ctx):
