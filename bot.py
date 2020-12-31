@@ -6,7 +6,7 @@ from discord.ext import commands
 from discord.ext.commands import has_role
 from discord import Member
 from discord.utils import get
-#from array import *
+import random #yuh
 
 load_dotenv()
 TOKEN = os.environ['DISCORD_TOKEN']
@@ -33,10 +33,9 @@ client = commands.Bot(command_prefix="$")
 
 @client.command(name="b")
 async def b(ctx):
-    #from random import shuffle
-    #x = [[i] for i in range(10)]
-    #shuffle(x)
-    book=book_list[8]
+    for x in range(60):
+        y = random.randint(1,60)
+    book=book_list[y]
     print(book)
     book_info=book['fields']
     await ctx.channel.send("Here's my suggestion")
