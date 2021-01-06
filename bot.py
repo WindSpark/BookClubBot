@@ -57,7 +57,7 @@ async def b(ctx):
 async def c(ctx):
     await ctx.channel.send("How to use BookClubBot")
     await ctx.channel.send("Send $b for a book suggestion.")
-    await ctx.channel.send("Send $c to close the bot.")
+    #await ctx.channel.send("Send $c to close the bot.")
 
 @client.event
 async def on_ready():
