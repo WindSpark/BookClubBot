@@ -48,10 +48,10 @@ async def b(ctx):
     await ctx.channel.send("Description: "+book_info['Description'])
 
 
-@client.command(name="c")
-async def c(ctx):
-    await ctx.channel.send("I will appear offline in 2 minutes, good-bye.")
-    await client.close()
+#@client.command(name="c")
+#async def c(ctx):
+    #await ctx.channel.send("I will appear offline in 2 minutes, good-bye.")
+    #await client.close()
 
 @client.command(name="h")
 async def c(ctx):
