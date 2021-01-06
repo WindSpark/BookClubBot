@@ -1,14 +1,14 @@
 import requests
 import os
 import discord
-from dotenv  import load_dotenv
+#from dotenv  import load_dotenv
 from discord.ext import commands
 from discord.ext.commands import has_role
 from discord import Member
 from discord.utils import get
 import random
 
-load_dotenv()
+#load_dotenv()
 TOKEN = os.environ['DISCORD_TOKEN']
 print(TOKEN)
 #client = discord.Client()
